@@ -61,6 +61,7 @@ else:
                 st.rerun()
             else:  # Streamlit < 1.22
                 st.experimental_rerun()
+            st.experimental_rerun()
     else:
         st.success(
             "All workouts completed for today! Head to the Progress page to review your performance."
