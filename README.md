@@ -6,11 +6,8 @@ progress visualization into dedicated pages.
 
 ## Features
 
-
-- User setup storing name, workout days, and multiple planned workouts per day with sets and reps
-- Daily workout logging that automatically loads today's exercises and reveals each one as you complete it
-- User setup storing name, workout days, and planned workouts with sets and reps
-- Daily workout logging with date, exercise, weight and reps
+- User setup storing name, rest timer, workout days, and multiple planned workouts per day with sets and reps
+- Daily workout logging goes set-by-set with an optional rest timer between sets
 - Progress page showing weight over time for each exercise
 
 ## Running
