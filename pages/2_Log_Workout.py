@@ -57,6 +57,10 @@ else:
                     placeholder.metric("Rest", f"{remaining}s")
                     time.sleep(1)
                 placeholder.empty()
+            if hasattr(st, "rerun"):
+                st.rerun()
+            else:  # Streamlit < 1.22
+                st.experimental_rerun()
             st.experimental_rerun()
     else:
         st.success(
