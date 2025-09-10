@@ -1,6 +1,8 @@
 # Personal Workout Tracker
 
-Simple Streamlit app for logging workouts and visualizing progress.
+Simple Streamlit app for logging workouts and visualizing progress. The app uses
+Streamlit's multipage feature to separate profile setup, workout logging and
+progress visualization into dedicated pages.
 
 ## Features
 - User setup storing name and weekly workout plan
