@@ -1,16 +1,14 @@
 # Personal Workout Tracker
 
-SwiftUI iOS app for tracking workouts and visualizing progress.
+Simple Streamlit app for logging workouts and visualizing progress.
 
 ## Features
-- One-time setup collecting user info and weekly workout plan
-- Daily workout logging with configurable rest timer
-- Automatic summary and progress storage
-- Progress charts visualizing weight over time with color-coded rep accuracy
+- User setup storing name and weekly workout plan
+- Daily workout logging with date, exercise, weight and reps
+- Progress page showing weight over time for each exercise
 
 ## Running
-1. Open the `WorkoutTracker` folder in Xcode 14+.
-2. Ensure your deployment target is iOS 16 or later (for the Charts framework).
-3. Build and run on an iPhone or simulator.
+1. Install dependencies: `pip install -r requirements.txt`
+2. Start the app: `streamlit run app.py`
 
-Data persists using `UserDefaults`; no backend required.
+Data is stored locally in the `data` directory.
