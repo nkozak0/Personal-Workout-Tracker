@@ -6,12 +6,9 @@ progress visualization into dedicated pages.
 
 ## Features
 
-
-- User setup storing name, workout days, and multiple planned workouts per day with sets and reps
-- Daily workout logging that automatically loads today's exercises and reveals each one as you complete it
-- User setup storing name, workout days, and planned workouts with sets and reps
-- Daily workout logging with date, exercise, weight and reps
-- Progress page showing weight over time for each exercise
+- User setup storing name, rest timer, workout days, and multiple planned workouts per day with sets and reps
+- Daily workout logging goes set-by-set with an optional rest timer between sets
+- Progress page organized by workout day with charts for each exercise, including colored rep markers and connecting lines
 
 ## Running
 1. Install dependencies: `pip install -r requirements.txt`

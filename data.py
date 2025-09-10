@@ -29,10 +29,7 @@ def load_profile() -> dict:
         "name": data.get("name", ""),
         "workout_days": data.get("workout_days", []),
         "workouts": workouts,
-    return {
-        "name": data.get("name", ""),
-        "workout_days": data.get("workout_days", []),
-        "workouts": data.get("workouts", {}),
+        "rest_seconds": data.get("rest_seconds", 0),
     }
 
 def save_profile(profile: dict) -> None:
