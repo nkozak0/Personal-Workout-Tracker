@@ -5,7 +5,8 @@ Streamlit's multipage feature to separate profile setup, workout logging and
 progress visualization into dedicated pages.
 
 ## Features
-- User setup storing name and weekly workout plan
+
+- User setup storing name, workout days, and planned workouts with sets and reps
 - Daily workout logging with date, exercise, weight and reps
 - Progress page showing weight over time for each exercise
 

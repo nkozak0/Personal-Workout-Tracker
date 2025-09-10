@@ -12,8 +12,14 @@ DATA_DIR.mkdir(exist_ok=True)
 def load_profile() -> dict:
     if PROFILE_FILE.exists():
         with open(PROFILE_FILE) as f:
-            return json.load(f)
-    return {"name": "", "weekly_plan": ""}
+            data = json.load(f)
+    else:
+        data = {}
+    return {
+        "name": data.get("name", ""),
+        "workout_days": data.get("workout_days", []),
+        "workouts": data.get("workouts", {}),
+    }
 
 def save_profile(profile: dict) -> None:
     with open(PROFILE_FILE, "w") as f:
