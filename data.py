@@ -15,6 +15,20 @@ def load_profile() -> dict:
             data = json.load(f)
     else:
         data = {}
+
+    raw_workouts = data.get("workouts", {})
+    workouts: dict[str, list[dict]] = {}
+    for day, w in raw_workouts.items():
+        if isinstance(w, list):
+            workouts[day] = w
+        else:
+            # backwards compatibility for old single-workout structure
+            workouts[day] = [w]
+
+    return {
+        "name": data.get("name", ""),
+        "workout_days": data.get("workout_days", []),
+        "workouts": workouts,
     return {
         "name": data.get("name", ""),
         "workout_days": data.get("workout_days", []),
