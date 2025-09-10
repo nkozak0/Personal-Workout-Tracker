@@ -12,8 +12,24 @@ DATA_DIR.mkdir(exist_ok=True)
 def load_profile() -> dict:
     if PROFILE_FILE.exists():
         with open(PROFILE_FILE) as f:
-            return json.load(f)
-    return {"name": "", "weekly_plan": ""}
+            data = json.load(f)
+    else:
+        data = {}
+
+    raw_workouts = data.get("workouts", {})
+    workouts: dict[str, list[dict]] = {}
+    for day, w in raw_workouts.items():
+        if isinstance(w, list):
+            workouts[day] = w
+        else:
+            # backwards compatibility for old single-workout structure
+            workouts[day] = [w]
+
+    return {
+        "name": data.get("name", ""),
+        "workout_days": data.get("workout_days", []),
+        "workouts": workouts,
+    }
 
 def save_profile(profile: dict) -> None:
     with open(PROFILE_FILE, "w") as f:
