@@ -29,10 +29,7 @@ def load_profile() -> dict:
         "name": data.get("name", ""),
         "workout_days": data.get("workout_days", []),
         "workouts": workouts,
-    return {
-        "name": data.get("name", ""),
-        "workout_days": data.get("workout_days", []),
-        "workouts": data.get("workouts", {}),
+        "rest_seconds": data.get("rest_seconds", 0),
     }
 
 def save_profile(profile: dict) -> None:
@@ -46,3 +43,11 @@ def load_logs() -> pd.DataFrame:
 
 def save_logs(df: pd.DataFrame) -> None:
     df.to_csv(LOG_FILE, index=False)
+
+
+def clear_data() -> None:
+    """Remove all saved profile and workout log data."""
+    if PROFILE_FILE.exists():
+        PROFILE_FILE.unlink()
+    if LOG_FILE.exists():
+        LOG_FILE.unlink()
