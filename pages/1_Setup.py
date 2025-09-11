@@ -1,6 +1,6 @@
 import streamlit as st
 
-from data import load_profile, save_profile
+from data import clear_data, load_profile, save_profile
 
 st.title("User Setup")
 
@@ -75,3 +75,11 @@ if submitted:
         }
     )
     st.success("Profile saved")
+
+if st.button("Clear All Data"):
+    clear_data()
+    st.success("All data cleared")
+    if hasattr(st, "rerun"):
+        st.rerun()
+    else:  # Streamlit < 1.22
+        st.experimental_rerun()
